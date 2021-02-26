@@ -4,7 +4,7 @@ import { ScrollView, Text, useState } from 'react-native';
 
 export default function Details(){
     const [todo, setTodo] = useState();
-    const [description, setDescription] = useState();
+    const [description, setDescription] = useState()
 
 
     return(
