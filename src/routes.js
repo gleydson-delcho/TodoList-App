@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import FormList from './pages/createList/FormList';
 import Home from './pages/createList/Home';
-import TodoDetails from './pages/createList/TodoDetails';
+// import TodoDetails from './pages/createList/TodoDetails';
 
 const {Navigator, Screen} = createStackNavigator(); 
 

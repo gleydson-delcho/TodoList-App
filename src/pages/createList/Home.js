@@ -1,25 +1,29 @@
 import { useNavigation } from '@react-navigation/native';
+import AsyncStorage from '@react-native-community/async-storage';
 import React, { Component } from 'react';
 
 
-import { View, Text, StyleSheet } from 'react-native';
-import { FlatList, RectButton } from 'react-native-gesture-handler';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { FlatList } from 'react-native-gesture-handler';
 
 
-export default function Home() {    
-        
-    
+export default function Home() {
+
     const navigation = useNavigation();
     function handleNavigateToForm(){
         navigation.navigate('FormList');
     }
+    
     return(
-        <View style={styles.container}>
-            <FlatList data={''} renderItem={''} />
+        <View style={styles.container}>            
+            <FlatList 
+                data={'todos'}
+                keyExtractor={(todo, i) => {return i;}}    
+            />
 
-            <RectButton style={styles.button} onPress={handleNavigateToForm}>
+            <TouchableOpacity style={styles.button} onPress={handleNavigateToForm}>
                 <Text style={styles.textButton} >Add Tarefas</Text>
-            </RectButton>
+            </TouchableOpacity>
         </View>
     );
 }

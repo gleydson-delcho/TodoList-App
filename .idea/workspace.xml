@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1705275b-eb53-45dd-b6e5-905955b0f95e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/createList/FormList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/createList/FormList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/createList/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/createList/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/createList/TodoDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/createList/TodoDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +45,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="159" y="137" width="1146" height="488" key="AVDManager" timestamp="1614291129701">
+    <state x="159" y="137" width="1146" height="488" key="AVDManager" timestamp="1614474299760">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="159" y="137" width="1146" height="488" key="AVDManager/0.0.1366.728@0.0.1366.728" timestamp="1614291129701" />
+    <state x="159" y="137" width="1146" height="488" key="AVDManager/0.0.1366.728@0.0.1366.728" timestamp="1614474299760" />
   </component>
 </project>

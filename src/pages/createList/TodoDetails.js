@@ -18,8 +18,7 @@ export default function Details(){
     );
 }
 
-const styles = StyleSheet.create({
-        
+const styles = StyleSheet.create({        
     title:{
         textAlign: 'center',
         fontSize: 30,

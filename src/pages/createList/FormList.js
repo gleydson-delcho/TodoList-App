@@ -1,40 +1,71 @@
-import React, { useState } from 'react';
+import React, { Component } from 'react';
 
-import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity } from 'react-native';
-import { Feather } from '@expo/vector-icons';
+import { View, StyleSheet, Text, TextInput, Keyboard, Alert } from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage'
+// import { Feather } from '@expo/vector-icons';
 import { RectButton } from 'react-native-gesture-handler';
 
+export default class FormList extends Component { 
 
-export default function FormList() { 
 
-        const [todo, setTodo] = useState('');
-        const [description, setDescription] = useState('');
+    constructor(props){
+        super(props);
+        this.state = {
+            todo: '',            
+            description: '',            
+        }
+    }
 
-       function handleCreateTodo(){
-           const data = new FormData();
-           
-           data.append('todo', todo);
-           data.append('description', description);
+    onChangeTodo(todo) {
+        this.setState({todo});
+    }
+
+    onChangeDesc (description) {
+        this.setState({description});
+    }
+    
+    async handleCreateTodo(){
+       try {
+           await AsyncStorage.setItem('@TODO', 
+                JSON.stringify([{ todo: this.state.total, description: this.state.description}]));
+
+           Keyboard.dismiss();
+           Alert.alert("Sucesso", "Tarefa salva com sucesso!");
+       } catch (error) {
+           alert(error)
        }
-        
+    console.log({
+        todo: this.state.todo,
+        description: this.state.description,
+    });
+   }
+    render(){ 
         return (
-            <ScrollView style={styles.container}>
+            <View style={styles.container}>
                 
                 <Text style={styles.title}>Dados</Text>
 
                 <Text style={styles.label}>Tarefa</Text>
-                <TextInput style={[styles.input, {height: 50}]} value={todo} onChangeText={setTodo} />
+                <TextInput style={[styles.input, {height: 50}]} 
+                    value={this.state.todo} 
+                    onChangeText={(txtTodo) => {this.onChangeTodo(txtTodo)}}                    
+                    autoFocus
+                />
 
                 <Text style={styles.label}>Descrição</Text>
-                <TextInput style={[styles.input, {height: 110}]} value={description} onChangeText={setDescription} multiline />
+                <TextInput style={[styles.input, {height: 110}]} 
+                    value={this.state.description} 
+                    onChangeText={(txtDesc) =>{this.onChangeDesc(txtDesc)}} 
+                    multiline                     
+                />
 
-                <RectButton style={styles.button} onPress={handleCreateTodo}>
+                <RectButton style={styles.button} onPress={() => this.handleCreateTodo()}>
                     <Text style={styles.textButton} >Cadastrar</Text>
                 </RectButton>
 
-            </ScrollView>
+            </View>
         );
-    
+    }    
 }
 
 const styles = StyleSheet.create({
