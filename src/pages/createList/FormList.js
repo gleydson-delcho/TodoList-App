@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { useNavigation } from '@react-navigation/native'
 import { View, StyleSheet, Text, TextInput, Keyboard, Alert } from 'react-native';
 import AsyncStorage from '@react-native-community/async-storage'
 // import { Feather } from '@expo/vector-icons';
@@ -27,17 +27,18 @@ export default class FormList extends Component {
     async handleCreateTodo(){
        try {
            await AsyncStorage.setItem('@TODO', 
-                JSON.stringify([{ todo: this.state.total, description: this.state.description}]));
+                JSON.stringify([{ todo: this.state.todo, description: this.state.description}]));
 
            Keyboard.dismiss();
            Alert.alert("Sucesso", "Tarefa salva com sucesso!");
        } catch (error) {
            alert(error)
-       }
-    console.log({
-        todo: this.state.todo,
-        description: this.state.description,
-    });
+       } 
+       
+       const {navigation} = this.props;
+    function handleNavigateToHome(){
+        navigation.navigate('Home');
+    }handleNavigateToHome();
    }
     render(){ 
         return (
